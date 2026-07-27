@@ -83,17 +83,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Cairn Clubhouse Bar Muirkirk | Country Pub & Kitchen" },
+      { title: "Cairn Clubhouse Bar Muirkirk | The Place To Be On Weekends" },
       {
         name: "description",
         content:
-          "Traditional Scottish country pub at Muirkirk Caravan Park. Homemade retro food, live weekend entertainment and a warm welcome.",
+          "Warm Scottish country pub at Muirkirk Caravan Park, Cumnock. Homemade retro food, live music, karaoke and a proper welcome every weekend.",
       },
       { name: "author", content: business.fullName },
       { property: "og:site_name", content: business.fullName },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#111111" },
+      { property: "og:title", content: "Cairn Clubhouse Bar Muirkirk | The Place To Be On Weekends" },
+      { name: "twitter:title", content: "Cairn Clubhouse Bar Muirkirk | The Place To Be On Weekends" },
+      { property: "og:description", content: "Warm Scottish country pub at Muirkirk Caravan Park, Cumnock. Homemade retro food, live music, karaoke and a proper welcome every weekend." },
+      { name: "twitter:description", content: "Warm Scottish country pub at Muirkirk Caravan Park, Cumnock. Homemade retro food, live music, karaoke and a proper welcome every weekend." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e7d37983-279c-4b41-a880-43fc287e767b/id-preview-c74fc097--914416ab-2aeb-4b5b-acfa-f6858676ff06.lovable.app-1785188286804.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e7d37983-279c-4b41-a880-43fc287e767b/id-preview-c74fc097--914416ab-2aeb-4b5b-acfa-f6858676ff06.lovable.app-1785188286804.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

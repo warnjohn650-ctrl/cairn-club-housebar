@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Homemade retro food just like your gran's cooking, live weekend entertainment and a warm Scottish welcome.",
+          "Warm Scottish country pub at Muirkirk Caravan Park, Cumnock. Homemade retro food, live music, karaoke and a proper welcome every weekend.",
       },
       { property: "og:url", content: "/" },
     ],
