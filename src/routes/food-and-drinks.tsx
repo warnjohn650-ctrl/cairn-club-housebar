@@ -35,9 +35,9 @@ function FoodAndDrinks() {
     <>
       <PageHero
         image={images.foodPie}
-        eyebrow="Food & Drinks"
-        title="Homemade retro food, just like your gran's"
-        intro="Everything is cooked to order in our own kitchen. Menus change with the seasons — ask about the blackboard specials."
+        eyebrow="Muirkirk Caravan Park"
+        title="The Cairn Clubhouse Bar Menu"
+        intro="Homemade retro food, cooked to order in our own kitchen. Breakfast at the weekend, lunch all day, and a proper Sunday dinner."
       />
 
       <section className="py-20 sm:py-28">
@@ -76,6 +76,14 @@ function FoodAndDrinks() {
           >
             <SectionHeading eyebrow={`${section.title} Menu`} title={section.title} subtitle={section.blurb} />
 
+            {section.note ? (
+              <div className="mt-8 flex justify-center">
+                <p className="glass-card rounded-full border border-gold/35 px-6 py-3 text-center text-xs uppercase tracking-[0.22em] text-gold sm:text-sm sm:tracking-[0.28em]">
+                  {section.note}
+                </p>
+              </div>
+            ) : null}
+
             <div className="mt-14 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-start">
               <ul className="grid gap-4 sm:grid-cols-2">
                 {section.items.map((item, i) => (
@@ -86,13 +94,17 @@ function FoodAndDrinks() {
                     transition={{ duration: 0.55, delay: 0.06 * i, ease: [0.16, 1, 0.3, 1] }}
                   >
                     <article className="glass-card group h-full rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40">
-                      <div className="flex items-baseline justify-between gap-4">
+                      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4">
                         <h3 className="font-display text-2xl text-beige">{item.name}</h3>
-                        <span className="shrink-0 font-display text-xl text-gold">{item.price}</span>
+                        {item.price ? (
+                          <span className="shrink-0 font-display text-xl text-gold">{item.price}</span>
+                        ) : null}
                       </div>
-                      <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                        {item.description}
-                      </p>
+                      {item.description ? (
+                        <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                          {item.description}
+                        </p>
+                      ) : null}
                       {item.tag ? (
                         <span className="mt-4 inline-block rounded-full border border-gold/35 px-3 py-1 text-[0.6rem] uppercase tracking-[0.25em] text-gold">
                           {item.tag}
@@ -117,7 +129,7 @@ function FoodAndDrinks() {
                   <div className="px-8">
                     <p className="font-display text-3xl text-gold">{section.title}</p>
                     <p className="mt-3 text-sm text-muted-foreground">
-                      Photo placeholder — ready to swap for a real photo from the bar.
+                      Freshly made in our own kitchen at Muirkirk Caravan Park.
                     </p>
                   </div>
                 </div>
@@ -127,11 +139,12 @@ function FoodAndDrinks() {
 
           <Reveal delay={0.2}>
             <p className="mt-20 text-center text-sm text-muted-foreground">
-              Allergies or dietary needs? Give us a ring on{" "}
+              Ask our staff about vegetarian options and we will do our best to accommodate you. Allergies
+              or dietary needs? Give us a ring on{" "}
               <a className="text-gold hover:underline" href={business.phoneHref}>
                 {business.phone}
-              </a>{" "}
-              and we'll look after you.
+              </a>
+              .
             </p>
           </Reveal>
         </div>
@@ -139,3 +152,4 @@ function FoodAndDrinks() {
     </>
   );
 }
+
